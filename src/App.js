@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 
 import avengers from './data';
@@ -19,6 +19,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ul className="navbar">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/avengers">Avengers</Link>
+          </li>
+        </ul>
         <Route exact path="/" component={Home} />  {/* the route is searched for by RegEx.  Router will therefore return whatever is the first match unless you use exact. */}
         <Route exact path="/avengers" component={AvengersList} />
         <Route path="/avengers/:id" component={AvengerPage} />
