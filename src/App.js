@@ -6,6 +6,8 @@ import avengers from './data';
 
 import Home from './components/Home';
 import AvengersList from './components/AvengersList';
+import AvengerPage from './components/AvengerPage';
+
 
 class App extends Component {
   constructor(){
@@ -19,6 +21,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={Home} />  {/* the route is searched for by RegEx.  Router will therefore return whatever is the first match unless you use exact. */}
         <Route exact path="/avengers" component={AvengersList} />
+        <Route path="/avengers/:id" component={AvengerPage} />
 
       </div>
     );
