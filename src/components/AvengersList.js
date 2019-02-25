@@ -1,17 +1,21 @@
 import React from 'react';
 
+import avengers from '../data';
+
+
+
 function AvengersList() {
   return (
-    <div>
-      <h1>Avengers List</h1>
-      <ul>
-        <li>Thor</li>
-        <li>Hulk</li>
-        <li>Iron Man</li>
-        <li>Dr.Strange</li>
-        <li>Captain Merica</li>
-        <li>Black Panther</li>
-      </ul>
+    <div className="characters-list-wrapper">
+      {avengers.map(avenger => {
+        return (
+          <div className="character-card" key={avenger.id}>
+            <img src={avenger.thumbnail} alt={avenger.name}/>
+            <h2>{avenger.name}</h2>
+            <p>{avenger.nickname}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }

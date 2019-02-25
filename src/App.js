@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import {Route } from 'react-router-dom';
 import './App.css';
 
+import avengers from './data';
+
 import Home from './components/Home';
 import AvengersList from './components/AvengersList';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      avengers: avengers,
+    }
+  }
   render() {
     return (
       <div className="App">
